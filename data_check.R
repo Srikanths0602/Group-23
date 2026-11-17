@@ -1,0 +1,5 @@
+library(tidyverse)
+df <- read_csv("survey.csv")
+print(nrow(df))
+print(table(df$family_history, df$treatment))
+print(round(prop.table(table(df$family_history, df$treatment), margin = 1) * 100, 1))
