@@ -1,5 +1,5 @@
 # ============================================================
-# visualisation.R
+# Visualisation.R
 # Group 23 - ds349, survey.csv (Mental Health in Tech Survey)
 #
 # RQ: Among employees of tech companies, is there a difference in the
@@ -34,7 +34,7 @@ df_tech <- subset(df_tech, tech_company == "Yes")
 print(nrow(df_tech))   # expected: 883
 
 # ---- SLIDE 3: sample of the data (first 5 rows of the columns we use) ----
-print(head(df_tech[, c("Age", "Country", "tech_company", "care_options", "treatment")], 5))
+print(head(df_tech[, c("self_employed", "tech_company", "care_options", "treatment")], 5))
 
 # ---- SLIDE 6: contingency table ----
 # Dependent variable (treatment) as rows, independent (care_options) as columns
