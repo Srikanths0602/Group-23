@@ -1,0 +1,16 @@
+# rejected_options.R
+# Purpose: record the options we checked and why they are weaker
+library(tidyverse)
+df <- read_csv("survey.csv")
+print(table(df$remote_work, df$treatment))
+print(round(prop.table(table(df$remote_work, df$treatment), margin = 1) * 100, 1))
+print(table(df$tech_company, df$treatment))
+print(round(prop.table(table(df$tech_company, df$treatment), margin = 1) * 100, 1))
+print(summary(df$Age))
+df_age <- subset(df, Age > 17)
+df_age <- subset(df_age, Age < 76)
+print(nrow(df_age))
+print(aggregate(Age ~ treatment, data = df_age, FUN = mean))
+print(table(df$work_interfere))
+print(table(df$no_employees))
+print(table(df$Gender))
